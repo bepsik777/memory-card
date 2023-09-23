@@ -1,7 +1,12 @@
+import Header from './components/Header.jsx'
+import CardsContainer from './components/CardsContainer.jsx';
+
+
 function App() {
   return (
     <>
-    <div>Hello Memory!</div>
+    <Header></Header>
+    <CardsContainer></CardsContainer>
     </>
   )
 }
