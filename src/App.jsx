@@ -6,8 +6,21 @@ import CardsContainer from './components/CardsContainer.jsx';
 function App() {
   const [score, setScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
+  const [clickedCardsArray, setClickeCardsArray] = useState([])
 
-  function handleScore() {
+  const handleScore = (e) => {
+    const cardId = e.target.id
+    if (clickedCardsArray.includes(cardId)) {
+      setClickeCardsArray([])
+      if (score > bestScore) setBestScore(score)
+      setScore(0)
+    } else {
+      const newScore = score + 1
+      setClickeCardsArray([...clickedCardsArray, cardId])
+      setScore(newScore)
+    }
+
+
     /*
     When card is clicked: 
     Check if the card was already clicked (compare with clicked array):
@@ -29,7 +42,7 @@ function App() {
   return (
     <>
     <Header score={score} bestScore={bestScore}></Header>
-    <CardsContainer></CardsContainer>
+    <CardsContainer handleScore={handleScore}></CardsContainer>
     </>
   )
 }

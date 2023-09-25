@@ -8,7 +8,7 @@ for (let i = 0; i < 12; i++) {
   keys.push(key)
 }
 
-export default function CardsContainer() {
+export default function CardsContainer({handleScore}) {
   const [cardOrder, setCardOrder] = useState(createRandomOrder());
 
   function createRandomOrder() {
@@ -25,7 +25,7 @@ export default function CardsContainer() {
 
   const handleClick = (e) => {
     setCardOrder(createRandomOrder());
-    console.log(e.target.id)
+    handleScore(e)
   };
 
   return (
@@ -102,6 +102,7 @@ function Card({ style, handleClick, id }) {
       style={style}
       onClick={handleClick}
       id={id}
+      key={id}
     ></div>
   );
 }
