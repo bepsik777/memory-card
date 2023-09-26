@@ -1,25 +1,23 @@
-import { useState } from 'react';
-import Header from './components/Header.jsx'
-import CardsContainer from './components/CardsContainer.jsx';
-
+import { useState } from "react";
+import Header from "./components/Header.jsx";
+import CardsContainer from "./components/CardsContainer.jsx";
 
 function App() {
-  const [score, setScore] = useState(0)
-  const [bestScore, setBestScore] = useState(0)
-  const [clickedCardsArray, setClickeCardsArray] = useState([])
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+  const [clickedCardsArray, setClickeCardsArray] = useState([]);
 
   const handleScore = (e) => {
-    const cardId = e.target.id
+    const cardId = e.target.id;
     if (clickedCardsArray.includes(cardId)) {
-      setClickeCardsArray([])
-      if (score > bestScore) setBestScore(score)
-      setScore(0)
+      setClickeCardsArray([]);
+      if (score > bestScore) setBestScore(score);
+      setScore(0);
     } else {
-      const newScore = score + 1
-      setClickeCardsArray([...clickedCardsArray, cardId])
-      setScore(newScore)
+      const newScore = score + 1;
+      setClickeCardsArray([...clickedCardsArray, cardId]);
+      setScore(newScore);
     }
-
 
     /*
     When card is clicked: 
@@ -37,14 +35,15 @@ function App() {
 
     if clicked cards array length equals 12 endGame()
     */
-  }
+  };
+
 
   return (
     <>
-    <Header score={score} bestScore={bestScore}></Header>
-    <CardsContainer handleScore={handleScore}></CardsContainer>
+      <Header score={score} bestScore={bestScore}></Header>
+      <CardsContainer handleScore={handleScore}></CardsContainer>
     </>
-  )
+  );
 }
 
 export default App;
