@@ -50,7 +50,7 @@ h6 {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     min-height: 90vh;
     padding: 50px;
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 .card {

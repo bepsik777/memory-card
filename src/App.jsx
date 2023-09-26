@@ -8,7 +8,8 @@ function App() {
   const [clickedCardsArray, setClickeCardsArray] = useState([]);
 
   const handleScore = (e) => {
-    const cardId = e.target.id;
+    const cardId = e.currentTarget.id;
+    console.log(cardId)
     if (clickedCardsArray.includes(cardId)) {
       setClickeCardsArray([]);
       if (score > bestScore) setBestScore(score);

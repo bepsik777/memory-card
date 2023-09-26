@@ -33,73 +33,73 @@ export default function CardsContainer({ handleScore }) {
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "blue", order: cardOrder[0] }}
-        id={keys[0]}
+        id="Garura, Wings of Resonant Life"
         imgId="Garura, Wings of Resonant Life"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "red", order: cardOrder[1] }}
-        id={keys[1]}
+        id="Terraforming"
         imgId="Terraforming"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "azure", order: cardOrder[2] }}
-        id={keys[2]}
+        id="Bystial Druiswurm"
         imgId="Bystial Druiswurm"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "black", order: cardOrder[3] }}
-        id={keys[3]}
+        id="Blue-Eyes White Dragon"
         imgId="Blue-Eyes White Dragon"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "cyan", order: cardOrder[4] }}
-        id={keys[4]}
+        id="Purrely Pretty Memory"
         imgId="Purrely Pretty Memory"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "violet", order: cardOrder[5] }}
-        id={keys[5]}
+        id="Evenly Matched"
         imgId="Evenly Matched"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "yellow", order: cardOrder[6] }}
-        id={keys[6]}
+        id="Dimension Shifter"
         imgId="Dimension Shifter"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "orange", order: cardOrder[7] }}
-        id={keys[7]}
+        id="Kashtira Shangri-Ira"
         imgId="Kashtira Shangri-Ira"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "green", order: cardOrder[8] }}
-        id={keys[8]}
+        id="Book of Moon"
         imgId="Book of Moon"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "brown", order: cardOrder[9] }}
-        id={keys[9]}
+        id="Underworld Goddess of the Closed World"
         imgId="Underworld Goddess of the Closed World"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "lightblue", order: cardOrder[10] }}
-        id={keys[10]}
+        id="Gameciel, the Sea Turtle Kaiju"
         imgId="Gameciel, the Sea Turtle Kaiju"
       ></Card>
       <Card
         handleClick={handleClick}
         style={{ backgroundColor: "lightgreen", order: cardOrder[11] }}
-        id={keys[11]}
+        id="Infinite Impermanence"
         imgId="Infinite Impermanence"
       ></Card>
     </main>
@@ -131,7 +131,7 @@ function Card({ style, handleClick, id, imgId }) {
       fetchImg();
     }
     return () => (ignore = true);
-  });
+  }, [imgId]);
 
   return (
     <div className="card" style={style} onClick={handleClick} id={id} key={id}>
