@@ -8,6 +8,7 @@ for (let i = 0; i < 12; i++) {
   keys.push(key);
 }
 
+
 export default function CardsContainer({ handleScore }) {
   const [cardOrder, setCardOrder] = useState(createRandomOrder());
 
@@ -121,7 +122,7 @@ function Card({ style, handleClick, id, imgId }) {
         const response = await fetch(url, options);
         const result = await response.json();
         const src = await result.data[0].card_images[0].image_url;
-        setImgSrc(src)
+        setImgSrc(src);
         console.log(result);
       } catch (error) {
         console.error(error);
@@ -134,8 +135,14 @@ function Card({ style, handleClick, id, imgId }) {
   }, [imgId]);
 
   return (
-    <div className="card" style={style} onClick={handleClick} id={id} key={id}>
-      <img src={imgSrc} alt="" className="image"/>
-    </div>
+      <div
+        className="card"
+        style={style}
+        onClick={handleClick}
+        id={id}
+        key={id}
+      >
+        <img src={imgSrc} alt="" className="image" />
+      </div>
   );
 }

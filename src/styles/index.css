@@ -1,3 +1,9 @@
+@import url(https://db.onlinewebfonts.com/c/5991b969840395ce81e1a54fe6dbecd8?family=MatrixIIOT-Bold);
+
+:root {
+    --main-font: MatrixIIOT-Bold
+}
+
 *,
 *::before,
 *::after {
@@ -38,9 +44,30 @@ h6 {
   isolation: isolate;
 }
 
+body {
+    background-color: #9966CC;
+}
+
 .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: end;
     min-height: 10vh;
-    border: 2px solid black;
+    padding: 20px;
+    /* border: 2px solid black; */
+    font-family: var(--main-font);
+}
+
+.header > h1 {
+    grid-column: 2/3;
+    justify-self: center;
+    font-size: 3rem;
+}
+
+.score-container {
+    justify-self: center;
+    grid-column: 3/4;
 }
 
 .cards-container {
@@ -54,8 +81,8 @@ h6 {
 }
 
 .card {
-    /* height: 400px;
-    width: 300px; */
+    height: 350px;
+    width: 250px;
     /* border: 2px solid black; */
     cursor: pointer;
     border-radius: 10px;
@@ -64,6 +91,6 @@ h6 {
 .image {
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: fill;
     border-radius: 10px;
 }
